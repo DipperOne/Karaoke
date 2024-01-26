@@ -74,6 +74,7 @@ $('.nav a').bind('click', function(e){
 
 /* Owl-Carousel Client Slider */
  
+<<<<<<< HEAD
 $(document).ready(function() {
   $("#portfolioOwl").owlCarousel({
 		autoPlay: 3000,
@@ -92,6 +93,26 @@ $(document).ready(function() {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
+=======
+// $(document).ready(function() {
+//   $("#portfolioOwl").owlCarousel({
+// 		autoPlay: 3000,
+// 		slideSpeed: 1200,
+// 	  paginationSpeed : 500,
+// 	  stopOnHover: true,
+//     items : 4,
+//     itemsDesktop : [1199,4],
+//     itemsDesktopSmall : [991,3],
+//     itemsTabletSmall : [767,2]
+//   }); 
+// });
+
+/* tool-tip initialize */
+
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// });
+>>>>>>> main
 
 
 /* Scroll to Top */  

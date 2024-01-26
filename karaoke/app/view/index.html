@@ -26,6 +26,10 @@
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="../app/img/logo/favicon.ico">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<<<<<<< HEAD
+=======
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+>>>>>>> main
 	</head>
 	
 	<body>
@@ -164,6 +168,7 @@
 			<div id="latestalbum" class="hero pad">
 				<div class="container">
 					<!-- hero content -->
+<<<<<<< HEAD
 					<!-- <div class="hero-content">
 						<input type="text" class="form-control" id="buscar_musica" placeholder="Pesquise uma música">
 						<br>
@@ -182,11 +187,21 @@
 					<div id="searchResults"></div>
 					<br>
 					<div id="videoPlayer"></div>
+=======
+					<form id="searchForm">
+						<label class="searchQuery" for="searchQuery">Pesquise uma música:</label>
+						<div class="search-youtube">
+							<input type="text" id="searchQuery" name="searchQuery" required autocomplete="off">
+							<button type="submit"><i class="fa fa-search" style="font-size: 26px; color: red"></i></button>							
+						</div>
+					</form>		
+>>>>>>> main
 
 					<!-- hero play list -->
 					<div class="hero-playlist">
 						<div class="row">
 							<div class="col-md-6 col-sm-6">
+<<<<<<< HEAD
 								<!-- music album image -->
 								<div class="figure">
 									<!-- image -->
@@ -209,6 +224,10 @@
 							<div class="col-md-6 col-sm-6">
 								<!-- play list -->
 								<div class="playlist-content">
+=======
+								<!-- play list -->
+								<div id="searchResults" class="playlist-content">
+>>>>>>> main
 									<ul class="list-unstyled">
 										<li class="playlist-number">
 											<!-- song information -->
@@ -223,6 +242,7 @@
 												<a href="#"><i class="fa fa-pause"></i></a>
 											</div>
 											<div class="clearfix"></div>
+<<<<<<< HEAD
 										</li>
 										<li class="playlist-number">
 											<!-- song information -->
@@ -325,6 +345,18 @@
 									</ul>
 								</div>
 							</div>
+=======
+										</li>										
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<!-- music album image -->
+								<div class="figure">
+									<div id="videoPlayer"></div>
+								</div>
+							</div>
+>>>>>>> main
 						</div>
 					</div>
 				</div>
@@ -361,11 +393,30 @@
 		<!-- Custom JS -->
 		<script src="../app/js/custom.js"></script>
 		<!-- JQUERY -->
+<<<<<<< HEAD
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 		<script>
 			$(document).ready(function () {
 				$('#searchForm').submit(function (event) {
+=======
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+		<script>
+			// Função para reproduzir o vídeo
+			function playVideo(videoId, title) {
+				const videoPlayer = $('#videoPlayer');
+				videoPlayer.html(`
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+					<div class="album-details">
+						<h4>${title}</h4>
+					</div>
+				`);
+			}
+
+			$(document).ready(function() {
+				$('#searchForm').submit(function(event) {
+>>>>>>> main
 					event.preventDefault(); // Impede o envio padrão do formulário
 
 					const searchQuery = $('#searchQuery').val();
@@ -376,28 +427,61 @@
 						method: 'POST',
 						contentType: 'application/json',
 						data: JSON.stringify({ searchQuery }),
+<<<<<<< HEAD
 						success: function (data) {
+=======
+						success: function(data) {
+>>>>>>> main
 							// Exiba os resultados da pesquisa na div 'searchResults'
 							const searchResultsDiv = $('#searchResults');
 							searchResultsDiv.empty(); // Limpa resultados anteriores
 
 							// Cria uma lista de opções ou cartões para os resultados
 							if (data.length > 0) {
+<<<<<<< HEAD
 								const resultList = $('<ul>');
 
 								// Itera sobre os resultados e cria uma opção ou cartão para cada um
 								$.each(data, function (index, result) {
 									const listItem = $('<li>');
+=======
+								const resultList = $('<div class="row">');
+
+								// Itera sobre os resultados e cria um item de lista para cada um
+								$.each(data, function(index, result) {
+									const listItem = $('<div class="col-md-6 col-sm-6">');
+									listItem.addClass('playlist-content');
+>>>>>>> main
 
 									// Adiciona informações sobre o resultado (pode personalizar isso conforme necessário)
 									const thumbnail = result.snippet.thumbnails.default.url;
 									const title = result.snippet.title;
 									const videoId = result.id.videoId;
+<<<<<<< HEAD
 
 									listItem.html(`
 										<img src="${thumbnail}" alt="${title}" width="120" height="90">
 										<p>${title}</p>
 										<button onclick="playVideo('${videoId}')">Reproduzir</button>
+=======
+									const category = result.snippet.category;
+
+									listItem.html(`
+										<div class="playlist-content">
+											<ul class="list-unstyled">
+												<li class="playlist-number">
+													<div class="song-info">
+														<img src="${thumbnail}" alt="${title}" width="100" height="60">
+														<p><strong>Album</strong>: ${title}
+													</div>
+													<div class="music-icon">
+														<a href="#" onclick="playVideo('${videoId}', '${title}')"><i class="fa fa-play"></i></a>
+													</div>
+													<div class="clearfix"></div>
+												</li>
+											</ul>
+										</div>
+>>>>>>> main
 									`);
 
 									resultList.append(listItem);
@@ -408,11 +492,16 @@
 								searchResultsDiv.text('Nenhum vídeo encontrado.');
 							}
 						},
+<<<<<<< HEAD
 						error: function (error) {
+=======
+						error: function(error) {
+>>>>>>> main
 							console.error('Erro ao enviar requisição:', error);
 						}
 					});
 				});
+<<<<<<< HEAD
 
 				// Função para reproduzir o vídeo
 				function playVideo(videoId) {
@@ -421,5 +510,9 @@
 				}
 			});
 		</script>
+=======
+				});
+		</script>			
+>>>>>>> main
 	</body>	
 </html>

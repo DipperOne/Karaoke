@@ -1222,4 +1222,68 @@ footer .copy-right {
 
 .destaque_logo {
 	color: red;
+<<<<<<< HEAD
 }
+=======
+}
+
+/* label de pesquisar múisica */
+.searchQuery {
+	display: flex;
+}
+
+.search-youtube {
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* Adiciona uma imagem de fundo ao input text */
+#searchForm input {
+    background-image: url('../img/banner/b1.jpg');
+	width: 90%; 
+    border-top: outset;
+    border-bottom: 1px solid;
+    background-size: cover; /* Ajusta o tamanho da imagem */
+    background-position: center; /* Centraliza a imagem no input */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    padding: 10px; /* Adiciona algum espaçamento interno para evitar que o texto sobreponha a imagem */
+	color: whitesmoke;
+	font-size: 20px;
+}
+
+#searchForm input:focus {
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-radius: 10px;
+	border-color: #f23030;
+	transition: .2s; 
+	outline: none;
+}
+
+#searchForm input::selection {
+    background-color: transparent; 	
+}
+
+#searchForm button {	
+	background: none;
+	border: 1px solid red;
+	border-radius: 5px;
+    padding: 10px;
+}
+
+#searchForm button:hover {
+	background-image: url('../img/banner/b1.jpg');
+	background-size: cover; /* Ajusta o tamanho da imagem */
+    background-position: center; /* Centraliza a imagem no input */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+	border-left: 1px solid;
+	border-radius: 10px;
+	border-color: #f23030;
+	transition: .2s; 
+}
+
+
+>>>>>>> main
