@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 
 const app = express();
-=======
-const axios      = require('axios');
-const express    = require('express');
-const bodyParser = require('body-parser');
-
-const app  = express();
->>>>>>> main
 const port = 3333;
 
 // Define o diretório de arquivos estáticos (por exemplo, HTML, CSS, imagens)
